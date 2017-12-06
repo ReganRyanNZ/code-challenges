@@ -2,11 +2,11 @@
 def getChange(m, price)
 
   cents = (m*100 - price*100).to_i
-  denominations = [100, 50, 25, 10, 5, 1]
+  denominations = [200, 100, 50, 20, 10]
 
   denominations.map do |v|
     result = cents / v
     cents %= v
-    result
-  end.reverse
+    result.to_s + "x" + v.to_s
+  end
 end
